@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jairus D. Cruz - Portfolio</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">/ Zujomenji</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#showcase">Websites</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero" class="container">
+        <div class="hero-content">
+            <h1>Hello, I'm Jairus Cruz</h1>
+            <p class="subtitle">Information Technology | Multimedia Arts and Animation</p>
+            <a href="#projects" class="cta-button">View Work</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/jairus.jpg" alt="Jairus D. Cruz Profile Picture">
+        </div>
+    </section>
+
+    <section id="about" class="container section-padding">
+        <h2>_About Me</h2>
+        <div class="about-grid">
+            <div class="bio-text">
+                <p>I'm a student at National University, working on my degree in BS Information Technology (BSIT-MAA). I really enjoy bringing my Digital Art skills together with technical works like User Interface (UI), User Experience (UX), and making games.</p>
+                <p>I started my professional journey as a freelance digital artist on Fiverr from 2020 to 2022. During that time, I focused on drawing fan arts, character designs, and original concepts. All the clients I worked with were happy with my art and always gave me high ratings. This work taught me a lot about making clients happy and delivering quality work. I truly love the process of being creative and getting to brainstorm new ideas.</p>
+                <p>Recently, my friend and I completed a school project: an interactive game menu we built in Unity called "Finding Aerith Fanmade," inspired by the Final Fantasy VII Remake. This project made us want to finish the whole game, and now we are planning to make more games together in the future.</p>
+                <p>I've always liked to draw and just be creative in any way I can. It's exciting how my interests have grown from traditional Arts and Graphic Design to Websites, UI/UX, and now Game Making. I want to keep learning more, creating new things, and hopefully inspire other people through my work.</p>
+            </div>
+            <div class="skills-list">
+                <h3>Key Skills:</h3>
+                <ul>
+                    <li>Character Designs</li>
+                    <li>Character Concept Design</li>
+                    <li>Digital and Graphic Design</li>
+                    <li>User Interface (UI) and User Experience (UX)</li>
+                    <li>Game Making</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2>_Projects</h2>
+            <div class="project-grid">
+                <a href="#" class="project-card" data-project-id="project1" onclick="openModal('project1'); return false;">
+                    <h3>Digital Arts</h3>
+                    <p>Original Characters, Character Concepts, Character Designs, Fan Arts.</p>
+                    <span class="view-link">See Full &rarr;</span>
+                </a>
+                <a href="#" class="project-card" data-project-id="project2" onclick="openModal('project2'); return false;">
+                    <h3>Finding Aerith Fanmade Game</h3>
+                    <p>A Fanmade game inspired by Final Fantasy VII Remake Game.</p>
+                    <span class="view-link">See Full &rarr;</span>
+                </a>
+                <a href="#" class="project-card" data-project-id="project3" onclick="openModal('project3'); return false;">
+                    <h3>Graphic Designs</h3>
+                    <p>Graphic Designs, Backdrops, Logos, Movie Titles.</p>
+                    <span class="view-link">See Full &rarr;</span>
+                </a>                           
+            </div>
+        </div>
+    </section>
+    
+    <section id="showcase" class="section-padding">
+        <div class="container">
+            <h2>_UI/UX Designs</h2>
+            <div class="project-grid">
+                <a href="#" class="project-card" data-project-id="project4" onclick="openModal('project4'); return false;">
+                    <h3>Zujomenji Zone Zero</h3>
+                    <p>Commission Website.</p>
+                    <span class="view-link">See Full &rarr;</span>
+                </a>
+                <a href="#" class="project-card" data-project-id="project5" onclick="openModal('project5'); return false;">
+                    <h3>Registrar Document Requests Queuing Information</h3>
+                    <p>School Project Defense.</p>
+                    <span class="view-link">See Full &rarr;</span>
+                </a>
+                <a href="#" class="project-card" data-project-id="project6" onclick="openModal('project6'); return false;">
+                    <h3>Visitor Log System</h3>
+                    <p>School Project Defense.</p>
+                    <span class="view-link">See Full &rarr;</span>
+                </a>                           
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container section-padding">
+        <h2>_Get In Touch</h2>
+        <p class="contact-prompt">Have a project in mind or just want to say hello? Let's connect.</p>
+        <a href="https://mail.google.com/mail/u/0/?fs=1&to=jairuscruzzz1122@gmail.com&tf=cm" class="cta-button secondary-button">Email Me Directly</a>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/jairus-cruz-751918397/">LinkedIn</a>
+            <a href="https://github.com/zujomenji">GitHub</a>
+            <a href="https://www.facebook.com/jairus.cruz.1088">Facebook</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zujomenji. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+<div id="projectModal" class="modal">
+    
+    <button class="arrow prev-arrow" onclick="changeImage(-1)">&lt;</button>
+    <button class="arrow next-arrow" onclick="changeImage(1)">&gt;</button>
+    
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Project Title</h3>
+        <div class="image-carousel">
+            <div class="image-wrapper"> 
+                <img id="modalImage" class="modal-image" src="" alt="Project Image">
+            </div>
+        </div>
+        <p id="modalDescription">Detailed description of the project will go here.</p>
+        <p><a id="modalLink" href="#" target="_blank" class="view-link">View Here &rarr;</a></p>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
