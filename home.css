@@ -352,3 +352,132 @@ footer {
     font-size: 0.9em;
     color: #666;
 }
+
+@media (max-width: 768px) {
+
+    /* General Adjustments */
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+    
+    /* Header & Navigation */
+    nav {
+        flex-direction: column; /* Stack logo and navigation links */
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-around; /* Space out the links across the full width */
+    }
+
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    /* Hero Section */
+    #hero {
+        flex-direction: column; /* Stack content (text) and image vertically */
+        min-height: auto;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        order: 2; /* Content goes below image */
+    }
+
+    .hero-image {
+        order: 1; /* Image goes above content */
+        margin-bottom: 30px;
+        width: 200px; /* Make image smaller */
+        height: 200px; /* Make image smaller */
+    }
+    
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    /* About Section */
+    .about-grid {
+        grid-template-columns: 1fr; /* Single column layout for bio and skills */
+        gap: 30px;
+    }
+    
+    /* Projects Section */
+    .project-grid {
+        grid-template-columns: 1fr; /* Force single column stacking for project cards */
+        gap: 20px;
+    }
+    
+    /* Contact Section */
+    .contact-prompt {
+        font-size: 1em;
+    }
+    
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .social-links a {
+        margin: 5px 0;
+    }
+
+    /* Modal Adjustments (To fit better on small screens) */
+    .modal-content {
+        margin: 20px;
+        padding: 20px;
+        width: calc(100% - 40px);
+        max-width: 100%;
+    }
+    
+    .modal-image {
+        max-height: 250px;
+    }
+    
+    /* Carousel Arrows - Reposition to be on the screen edges relative to the modal */
+    .arrow {
+        position: absolute; /* Changed from fixed to absolute to contain within the viewport */
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px 10px;
+        font-size: 18px;
+        background: rgba(0, 0, 0, 0.5); /* Less opaque background for arrows */
+        z-index: 102;
+    }
+
+    .prev-arrow {
+        left: 0;
+        margin-left: 0; /* Override desktop margin */
+    }
+    .next-arrow {
+        right: 0;
+        left: auto; /* Ensure it sticks to the right edge */
+        margin-left: 0; /* Override desktop margin */
+    }
+
+    .modal-content h3 {
+        font-size: 1.5em;
+    }
+    
+    .modal-content p {
+        font-size: 1em;
+    }
+}
