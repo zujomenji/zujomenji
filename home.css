@@ -183,9 +183,17 @@ nav {
     border-radius: 2px;
 }
 
-/*Projects Section*/
+/*
+  The background color is now applied to the outer div in HTML 
+  (or you can leave it here, but remove padding/margins that are now handled by the outer div).
+*/
+#projects, #showcase {
+    background-color: var(--accent-color); /* Keep background color */
+    padding: 0; /* REMOVE section-padding from individual sections */
+}
+
 #projects {
-    background-color: var(--accent-color);
+    margin-bottom: 60px; /* Add space between Projects and UI/UX Designs */
 }
 
 .project-grid {
@@ -219,10 +227,6 @@ nav {
     color: var(--primary-color);
 }
 
-/*Showcase Section Overrides*/
-#showcase .project-card {
-    background-color: var(--accent-color); 
-}
 /*Contact Section*/
 .contact-prompt {
     font-size: 1.2em;
