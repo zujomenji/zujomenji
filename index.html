@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jairus D. Cruz - Portfolio</title>
+    <link rel="icon" type="image/png" href="images/final.png"> 
     <link rel="stylesheet" href="home.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    
     <header>
-        <nav class="container">
-            <div class="logo">/ Zujomenji</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#showcase">Websites</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">
+                    <img src="images/full_logo.png" alt="Your Name Full Logo">
+                </a>
+                    
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                    
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#showcase">Websites</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <section id="hero" class="container">
@@ -56,7 +68,7 @@
 
     <section id="projects" class="section-padding">
         <div class="container">
-            <h2>_Projects</h2>
+            <h2>_Projects </h2>
             <div class="project-grid">
                 <a href="#" class="project-card" data-project-id="project1" onclick="openModal('project1'); return false;">
                     <h3>Digital Arts</h3>
@@ -72,7 +84,7 @@
                     <h3>Graphic Designs</h3>
                     <p>Graphic Designs, Backdrops, Logos, Movie Titles.</p>
                     <span class="view-link">See Full &rarr;</span>
-                </a>                           
+                </a>                        
             </div>
         </div>
     </section>
@@ -95,7 +107,7 @@
                     <h3>Visitor Log System</h3>
                     <p>School Project Defense.</p>
                     <span class="view-link">See Full &rarr;</span>
-                </a>                           
+                </a>                        
             </div>
         </div>
     </section>
