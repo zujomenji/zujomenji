@@ -106,7 +106,7 @@ nav {
 }
 
 .logo img {
-    height: 80px; 
+    height: 60px; 
     width: auto;
     vertical-align: middle;
 }
@@ -245,17 +245,11 @@ nav {
 }
 
 /* --- Projects & UI/UX Designs Aesthetics --- */
-#projects, #showcase {
+#projects, #showcase, #videos {
     background-color: var(--secondary-color);
-    padding: 80px 0; 
-}
-
-#projects {
-    border-top: 1px solid var(--accent-color); 
+    padding: 80px 0;
+    border-top: 1px solid var(--accent-color);
     margin-bottom: 0; 
-}
-#showcase {
-    border-top: 1px solid var(--accent-color); 
 }
 
 .project-grid {
@@ -594,8 +588,8 @@ footer {
     }
     
     /* Projects Section */
-    #projects, #showcase {
-        padding: 40px 0; 
+    #projects, #showcase, #videos {
+        padding: 40px 0;
     }
     
     .project-grid {
@@ -605,7 +599,9 @@ footer {
     
     /* Contact Section */
     #contact {
-        padding: 60px 0;
+        background-color: var(--secondary-color);
+        padding: 80px 0;
+        border-top: 1px solid var(--accent-color);
     }
     
     .contact-prompt {
