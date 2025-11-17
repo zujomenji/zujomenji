@@ -1,8 +1,10 @@
+/* home.css */
 :root {
-    --primary-color: rgb(143, 11, 11);
-    --secondary-color: #ffffff;
-    --accent-color: #eeeeee;
-    --text-color: #333333;
+    --primary-color: rgb(143, 11, 11); /* Deep Red */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #e5e5e5; /* DARKER GRAY: Used for borders and light backgrounds */
+    --dark-text: #222222; /* Darker Text */
+    --light-text: #4a4a4a; /* DARKER LIGHT-TEXT: Used for body prose */
     --font-family: 'Montserrat', sans-serif;
     --transition-speed: 0.3s;
 }
@@ -15,8 +17,8 @@
 
 body {
     font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--text-color);
+    line-height: 1.7; /* Increased line height for readability */
+    color: var(--dark-text); /* Use dark text color */
     background-color: var(--secondary-color);
 }
 
@@ -28,7 +30,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--dark-text);
     transition: color var(--transition-speed);
 }
 
@@ -40,58 +42,80 @@ a:hover {
     padding: 100px 0;
 }
 
-/*Typography*/
+/* --- Typography --- */
+
 h1 {
-    font-size: 4em;
-    font-weight: 700;
-    margin-bottom: 0.2em;
+    font-size: 4.2em; /* Slightly larger */
+    font-weight: 800; /* Extra bold for impact */
+    margin-bottom: 0.1em;
+    line-height: 1.1;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 3em; /* Larger section titles */
     font-weight: 700;
-    margin-bottom: 1em;
+    margin-bottom: 0.8em;
     color: var(--primary-color);
+    position: relative;
+}
+/* Aesthetic: Subtle Underline for section titles */
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px; 
+    height: 4px;
+    background-color: var(--accent-color);
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 700;
     margin-bottom: 0.5em;
+    color: var(--dark-text);
 }
 
 p {
     margin-bottom: 1.5em;
+    color: var(--light-text); /* Lighter text for prose (now darker) */
 }
 
 .subtitle {
-    font-size: 1.25em;
-    font-weight: 300;
-    color: var(--text-color);
-    margin-bottom: 2em;
+    font-size: 1.35em; /* Slightly larger subtitle */
+    font-weight: 400; 
+    color: var(--dark-text);
+    margin-bottom: 2.5em;
 }
 
-/*Header & Navigation*/
+/* --- Header & Navigation --- */
 header {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--accent-color);
+    padding: 15px 0;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Needed for absolute positioning of mobile menu */
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--primary-color);
+.logo img {
+    height: 80px; 
+    width: auto;
+    vertical-align: middle;
 }
 
+/* DESKTOP NAVIGATION */
 .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Always flex on desktop */
+    margin-left: auto; /* Push links to the right */
 }
 
 .nav-links li {
@@ -99,26 +123,47 @@ nav {
 }
 
 .nav-links a {
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 600; 
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    position: relative;
+}
+.nav-links a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed);
 }
 
-/*Buttons*/
+/* HIDE MENU TOGGLE ON DESKTOP */
+.menu-toggle {
+    display: none;
+}
+
+
+/* --- Buttons --- */
 .cta-button {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 14px 35px;
     border: 2px solid var(--primary-color);
     background-color: var(--primary-color);
     color: var(--secondary-color);
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     transition: all var(--transition-speed);
+    border-radius: 4px;
 }
 
 .cta-button:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(143, 11, 11, 0.2);
 }
 
 .secondary-button {
@@ -131,39 +176,48 @@ nav {
     color: var(--secondary-color);
 }
 
-/*Hero*/
+/* --- Hero Section --- */
 #hero {
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden; 
+}
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color); 
+    z-index: -1;
 }
 
 .hero-content {
-    max-width: 60%;
+    max-width: 55%; 
+    z-index: 1; 
 }
 
 .hero-image {
-    /* **CHANGE THESE VALUES to make the picture smaller** */
-    width: 300px; 
-    height: 300px;
-    
-    /* The rest of the styling */
+    width: 350px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Ensure you still have the .hero-image img rule to make it circular and fit */
 .hero-image img {
     width: 100%; 
     height: 100%;
     object-fit: cover; 
     border-radius: 50%; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/*About*/
+/* --- About Section --- */
 .about-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -172,28 +226,36 @@ nav {
 
 .skills-list ul {
     list-style: none;
+    padding-left: 0;
+}
+
+.skills-list h3 {
+    font-weight: 600; 
 }
 
 .skills-list li {
     background-color: var(--accent-color);
     display: inline-block;
-    padding: 5px 10px;
+    padding: 8px 15px;
     margin: 0 10px 10px 0;
-    font-size: 0.9em;
-    border-radius: 2px;
+    font-size: 0.95em;
+    border-radius: 20px;
+    font-weight: 500;
+    color: var(--dark-text);
 }
 
-/*
-  The background color is now applied to the outer div in HTML 
-  (or you can leave it here, but remove padding/margins that are now handled by the outer div).
-*/
+/* --- Projects & UI/UX Designs Aesthetics --- */
 #projects, #showcase {
-    background-color: var(--accent-color); /* Keep background color */
-    padding: 0; /* REMOVE section-padding from individual sections */
+    background-color: var(--secondary-color);
+    padding: 80px 0; 
 }
 
 #projects {
-    margin-bottom: 60px; /* Add space between Projects and UI/UX Designs */
+    border-top: 1px solid var(--accent-color); 
+    margin-bottom: 0; 
+}
+#showcase {
+    border-top: 1px solid var(--accent-color); 
 }
 
 .project-grid {
@@ -205,19 +267,38 @@ nav {
 .project-card {
     display: block;
     padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
     border: 1px solid var(--accent-color);
+    border-radius: 8px;
     transition: all var(--transition-speed);
     background-color: var(--secondary-color);
 }
 
 .project-card:hover {
-    box-shadow: 0 10px 30px rgba(143, 11, 11, 0.1);
-    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(143, 11, 11, 0.15);
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: var(--dark-text);
+    margin-bottom: 0.25em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.project-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
 }
 
 .project-card p {
     margin-bottom: 1em;
-    color: #666;
+    color: var(--light-text);
 }
 
 .view-link {
@@ -225,23 +306,47 @@ nav {
     font-size: 0.9em;
     text-transform: uppercase;
     color: var(--primary-color);
+    position: relative;
 }
 
-/*Contact Section*/
+.view-link:hover {
+    color: var(--dark-text);
+}
+
+
+/* --- Contact Section --- */
+#contact {
+    background-color: var(--secondary-color); 
+    padding: 80px 0;
+    border-top: 1px solid var(--accent-color);
+}
+
 .contact-prompt {
     font-size: 1.2em;
     max-width: 600px;
     margin-bottom: 30px;
+    color: var(--dark-text);
+}
+
+.social-links {
+    margin-top: 40px;
 }
 
 .social-links a {
     margin-right: 30px;
     font-size: 1.1em;
-    font-weight: 400;
+    font-weight: 600; 
     letter-spacing: 0.5px;
 }
+.social-links a:not(:last-child)::after {
+    content: '|';
+    margin-left: 30px;
+    color: var(--primary-color);
+    font-weight: 400;
+}
 
-/*MODAL STYLES*/
+
+/* --- MODAL STYLES --- */
 .modal {
     display: none;
     position: fixed; 
@@ -263,24 +368,28 @@ nav {
     padding: 40px;
     border: 1px solid var(--primary-color); 
     width: 90%;
-    max-width: 700px; 
+    max-width: 800px;
     position: relative;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 /*Close Button*/
 .close-button {
     color: var(--dark-text);
-    float: right;
+    position: absolute;
+    top: 15px;
+    right: 25px;
     font-size: 40px;
     font-weight: bold;
     line-height: 20px;
     cursor: pointer;
-    transition: color var(--transition);
+    transition: color var(--transition-speed);
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: var(--red);
+    color: var(--primary-color);
     text-decoration: none;
     cursor: pointer;
 }
@@ -327,39 +436,115 @@ nav {
 .arrow:hover {
     background: var(--primary-color);
 }
-
 .prev-arrow { 
     left: 50%;
-    margin-left: -450px;
+    margin-left: -500px;
 }
 .next-arrow { 
     left: 50%;
-    margin-left: 400px;
+    margin-left: 450px;
 }
 
 /*Modal Content Typography Overrides*/
 .modal-content h3 {
-    font-size: 2em;
+    font-size: 2.2em;
     border-bottom: none;
     color: var(--dark-text);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .modal-content p {
     font-size: 1.1em;
+    color: var(--light-text);
 }
 
-/*Footer*/
+/* --- Footer --- */
 footer {
     padding: 30px 0;
     text-align: center;
     border-top: 1px solid var(--accent-color);
     font-size: 0.9em;
-    color: #666;
+    color: var(--light-text);
+    background-color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
 
-    /* General Adjustments */
+    nav {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo img {
+        max-height: 64px;
+        height: auto;
+    }
+
+    /* Hamburger Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+        z-index: 60;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px 0;
+        background-color: var(--dark-text);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        max-width: 300px;
+        background-color: var(--secondary-color);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-top: 1px solid var(--accent-color);
+        z-index: 49;
+        text-align: right;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+        border-bottom: 1px solid var(--accent-color);
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .nav-links a:hover::after {
+        content: none;
+    }
+
     .section-padding {
         padding: 60px 0;
     }
@@ -370,32 +555,17 @@ footer {
 
     /* Typography */
     h1 {
-        font-size: 3em;
+        font-size: 2.8em;
     }
 
     h2 {
         font-size: 2em;
+        margin-bottom: 30px;
     }
     
-    /* Header & Navigation */
-    nav {
-        flex-direction: column; /* Stack logo and navigation links */
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        margin-top: 15px;
-        width: 100%;
-        justify-content: space-around; /* Space out the links across the full width */
-    }
-
-    .nav-links li {
-        margin-left: 0;
-    }
-
     /* Hero Section */
     #hero {
-        flex-direction: column; /* Stack content (text) and image vertically */
+        flex-direction: column; 
         min-height: auto;
         padding: 60px 0;
         text-align: center;
@@ -403,14 +573,14 @@ footer {
 
     .hero-content {
         max-width: 100%;
-        order: 2; /* Content goes below image */
+        order: 2; 
     }
 
     .hero-image {
-        order: 1; /* Image goes above content */
+        order: 1; 
         margin-bottom: 30px;
-        width: 200px; /* Make image smaller */
-        height: 200px; /* Make image smaller */
+        width: 250px;
+        height: 250px; 
     }
     
     .subtitle {
@@ -419,17 +589,25 @@ footer {
 
     /* About Section */
     .about-grid {
-        grid-template-columns: 1fr; /* Single column layout for bio and skills */
+        grid-template-columns: 1fr; 
         gap: 30px;
     }
     
     /* Projects Section */
+    #projects, #showcase {
+        padding: 40px 0; 
+    }
+    
     .project-grid {
-        grid-template-columns: 1fr; /* Force single column stacking for project cards */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
     
     /* Contact Section */
+    #contact {
+        padding: 60px 0;
+    }
+    
     .contact-prompt {
         font-size: 1em;
     }
@@ -437,14 +615,16 @@ footer {
     .social-links {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     
     .social-links a {
-        margin: 5px 0;
+        margin: 10px 0;
+    }
+    .social-links a:not(:last-child)::after {
+        content: none;
     }
 
-    /* Modal Adjustments (To fit better on small screens) */
     .modal-content {
         margin: 20px;
         padding: 20px;
@@ -456,32 +636,23 @@ footer {
         max-height: 250px;
     }
     
-    /* Carousel Arrows - Reposition to be on the screen edges relative to the modal */
     .arrow {
-        position: absolute; /* Changed from fixed to absolute to contain within the viewport */
+        position: absolute; 
         top: 50%;
         transform: translateY(-50%);
         padding: 8px 10px;
         font-size: 18px;
-        background: rgba(0, 0, 0, 0.5); /* Less opaque background for arrows */
+        background: rgba(0, 0, 0, 0.5); 
         z-index: 102;
     }
 
     .prev-arrow {
         left: 0;
-        margin-left: 0; /* Override desktop margin */
+        margin-left: 0; 
     }
     .next-arrow {
         right: 0;
-        left: auto; /* Ensure it sticks to the right edge */
-        margin-left: 0; /* Override desktop margin */
-    }
-
-    .modal-content h3 {
-        font-size: 1.5em;
-    }
-    
-    .modal-content p {
-        font-size: 1em;
+        left: auto; 
+        margin-left: 0; 
     }
 }
