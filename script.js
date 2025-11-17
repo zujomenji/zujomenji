@@ -69,7 +69,8 @@ const projectData = {
             'images/project4/graphic/j.png',
             'images/project4/graphic/k.png',
             'images/project4/graphic/l.png',
-            'images/project4/graphic/m.png',            
+            'images/project4/graphic/m.png',
+            'images/project4/graphic/n.png',           
         ]
     },
     
@@ -190,8 +191,8 @@ function changeImage(step) {
 }
 
 function closeModal() {
-    modal.style.display = 'none';
-    currentProjectImages = []; 
+    modal.style.display = 'none';
+    currentProjectImages = []; 
 }
 
 window.onclick = function(event) {
@@ -204,4 +205,31 @@ document.addEventListener('keydown', function(event) {
     if (event.key === "Escape" && modal.style.display === 'block') {
         closeModal();
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        // Toggle the 'active' class on click
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            // Optional: You might want to add a class to the toggle itself for an 'X' animation later
+            // menuToggle.classList.toggle('is-open'); 
+        });
+
+        // Close menu when a link is clicked (to navigate sections)
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                // menuToggle.classList.remove('is-open'); 
+            });
+        });
+    }
+    
+    // Check if the script needs to initialize modal/carousel functions here as well
+    // (Assuming modal/carousel logic is also in script.js)
+    
 });
