@@ -3,7 +3,7 @@ const projectData = {
     //PROJECT 1
     'project1': {
         title: 'Digital Arts',
-        description: "These are some of the Character Concepts, Character Reimagined, Character Concepts, Original Characters, Fanarts i did.",
+        description: "Tool: Paint Tool Sai - These are some of the Character Concepts, Character Reimagined, Character Concepts, Original Characters, Fanarts i did.",
         images: [
             'images/project1/a.png', 
             'images/project1/b.png',
@@ -36,8 +36,7 @@ const projectData = {
     //PROJECT 2
     'project2': {
         title: 'Finding Aerith Fanmade Game',
-        description: "Finding Aerith Fanmade is a School Project Game and is inspired by Final Fantasy VII Remake. We do not claim ownership, assets, characters, or stories related to Square Enix's intellectual Property. All Rights remain with their respective creators.",
-        technologies: 'Unity, C#, Digital Art, UI/UX Design.',
+        description: "Tools: Unity, Visual Studio Code, Paint Tool Sai, PixiEditor - Finding Aerith Fanmade is a School Project Game and is inspired by Final Fantasy VII Remake. We do not claim ownership, assets, characters, or stories related to Square Enix's intellectual Property. All Rights remain with their respective creators.",
         link: 'https://youtu.be/IkHQmNMBdh0',
         images: [
             'images/project2/a.png',
@@ -55,7 +54,7 @@ const projectData = {
     // PROJECT 3
     'project3': {
         title: 'Graphic Designs',
-        description: "These are some backdrops i made in Jesus Is Lord Church Malabon, and others are Movie Titles and Logos I made.",
+        description: "Tools: Canva, Paint Tool Sai - These are some backdrops i made in Jesus Is Lord Church Malabon, and others are Movie Titles and Logos I made.",
         images: [
             'images/project4/graphic/a.png',
             'images/project4/graphic/b.png',
@@ -77,7 +76,7 @@ const projectData = {
     // PROJECT 4
     'project4': {
         title: 'Zujomenji Zone Zero',
-        description: "My Commission Website (Deleted).",
+        description: "Tools: Canva, Figma, Paint Tool Sai - My Commission Website (Deleted).",
         images: [
             'images/project4/commission/1.png',
             'images/project4/commission/2.png',
@@ -97,7 +96,7 @@ const projectData = {
     // PROJECT 5
     'project5': {
         title: 'Registrar Document Requests Queuing Information',
-        description: "School Project Defense.",
+        description: "Tools: Figma, Canva - School Project Defense.",
         images: [
             'images/project4/queuing/1.png',
             'images/project4/queuing/2.png',
@@ -111,7 +110,7 @@ const projectData = {
     },
     'project6': {
         title: 'Visitor Log System',
-        description: "School Project Defense.",
+        description: "Tools: Figma, Canva - School Project Defense.",
         images: [
             'images/project4/visitor/1.png',
             'images/project4/visitor/2.png',
@@ -215,8 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle the 'active' class on click
         menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            // Optional: You might want to add a class to the toggle itself for an 'X' animation later
-            // menuToggle.classList.toggle('is-open'); 
         });
 
         // Close menu when a link is clicked (to navigate sections)
@@ -228,8 +225,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // Check if the script needs to initialize modal/carousel functions here as well
-    // (Assuming modal/carousel logic is also in script.js)
-    
 });
